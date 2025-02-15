@@ -19,7 +19,7 @@ def concatYPos():
 concatYPos()
 
 Points = []
-def connection_points():
+def connection_points(): # obviously theres a better and less hardcoded way than drawing from one vertex to the other but it works
     penup()
     setposition(Points[0], Points[1])
     pendown()
@@ -100,7 +100,7 @@ def render_object():
         xPos = projection[0][0] * z_axis
         yPos = projection[1][0] * z_axis
         penup()
-        setposition(xPos + x_axis, yPos + y_axis) # later make it so it sets position from 1 vertex to the other just like in the old renderer
+        setposition(xPos + x_axis, yPos + y_axis)
         Points.append(concatXPos())
         Points.append(concatYPos())
         PreviousX = concatXPos()
