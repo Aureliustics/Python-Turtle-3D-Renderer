@@ -6,7 +6,7 @@
   <li>Must be ran in a <a href="https://codehs.com/" target="_blank">CodeHS</a> sandbox</li>
   <li>Once logged into Codehs, click "Sandbox" in the navigation bar</li>
   <li>Click "Create Program" then select "Python (turtle)" and create program</li>
-  <li>Copy and paste the code from either the square example or triangle example into your sandbox then run</li>
+  <li>Copy and paste the code from either the <a href="https://github.com/Aureliustics/Python-Turtle-3D-Renderer/blob/main/Render%20Square%20Example.py" target="_blank">square example</a> or <a href="https://github.com/Aureliustics/Python-Turtle-3D-Renderer/blob/main/Render%20Triangle%20Example.py" target="_blank">triangle example</a> into your sandbox then run</li>
   <li>Interact with the object using WASD and arrow keys. WASD moves the camera position and arrow keys changes the rotation of the object</li>
 </ul>
 
