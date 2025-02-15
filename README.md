@@ -7,6 +7,7 @@
   <li>Once logged into Codehs, click "Sandbox" in the navigation bar</li>
   <li>Click "Create Program" then select "Python (turtle)" and create program</li>
   <li>Copy and paste the code from either the square example or triangle example into your sandbox then run</li>
+  <li>Interact with the object using WASD and arrow keys. WASD moves the camera position and arrow keys changes the rotation of the object</li>
 </ul>
 
 <h1>Modify Object</h1>
