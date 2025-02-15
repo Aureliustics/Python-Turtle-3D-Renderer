@@ -108,7 +108,7 @@ def render_object():
         xPos = projection[0][0] * z_axis
         yPos = projection[1][0] * z_axis
         penup()
-        setposition(xPos + x_axis, yPos + y_axis) # later make it so it sets position from 1 vertex to the other just like in the old renderer
+        setposition(xPos + x_axis, yPos + y_axis)
         Points.append(concatXPos())
         Points.append(concatYPos())
         PreviousX = concatXPos()
