@@ -1,4 +1,5 @@
 debug = False
+print("Camera Controls: \nW = Forward\nA = Left\nS = Backward\nD = Right\nSpace = Up\nLControl = Down\n\nRotation:\nUse Arrow Keys")
 # Matrix: https://technology.cpm.org/general/3dgraph/?graph3ddata=____bIxmuxmuwWaJxmuwWawWaKwWawWawWaLwWaxmuwWaMwWawWaxmuHwWaxmuxmuIxmuwWaxmuJxmuxmuxmuKxBExBExBELxBEwG0xBEMwG0wG0xBEHwG0xBExBEIxBExBEwG0JwG0xBEwG0KxBEwG0wG0LwG0wG0wG0
 screen = getscreen()
 import math
@@ -176,12 +177,12 @@ def right_arrow():
     
 def left_arrow():
     global angleY
-    angleY = angleY - 0.1
+    angleY -= 0.1
     render_object()
     
 def up_arrow():
     global angleX
-    angleX = angleX - 0.1
+    angleX -= + 0.1
     render_object()
     
 def down_arrow():
