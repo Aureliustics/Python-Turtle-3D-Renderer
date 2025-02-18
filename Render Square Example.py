@@ -134,12 +134,12 @@ def right_arrow():
     
 def left_arrow():
     global angleY
-    angleY = angleY - 0.1
+    angleY -= 0.1
     render_object()
     
 def up_arrow():
     global angleX
-    angleX = angleX - 0.1
+    angleX -= + 0.1
     render_object()
     
 def down_arrow():
