@@ -1,5 +1,6 @@
 screen = getscreen()
 import math
+print("Camera Controls: \nW = Forward\nA = Left\nS = Backward\nD = Right\nSpace = Up\nLControl = Down\n\nRotation:\nUse Arrow Keys")
 speed(0)
 bgcolor("white")
 
@@ -125,12 +126,12 @@ def right_arrow():
     
 def left_arrow():
     global angleY
-    angleY = angleY - 0.1
+    angleY -= 0.1
     render_object()
     
 def up_arrow():
     global angleX
-    angleX = angleX - 0.1
+    angleX -= + 0.1
     render_object()
     
 def down_arrow():
@@ -140,33 +141,33 @@ def down_arrow():
     
 def w():
     global z_axis
-    z_axis += 10
+    z_axis += 5
     render_object()
     
 def s():
     global z_axis
-    if z_axis >= 5: # so it wont invert
-        z_axis -= 10
+    if z_axis >= 5: # so the object wont invert
+        z_axis -= 5
         render_object()
     
 def d():
     global x_axis
-    x_axis += 10
+    x_axis += 5
     render_object()
     
 def a():
     global x_axis
-    x_axis -= 10
+    x_axis -= 5
     render_object()
     
 def space():
     global y_axis
-    y_axis += 10
+    y_axis += 5
     render_object()
     
 def control():
     global y_axis
-    y_axis -= 10
+    y_axis -= 5
     render_object()
     
 def keyInput():

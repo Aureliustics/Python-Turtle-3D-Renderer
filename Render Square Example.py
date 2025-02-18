@@ -1,5 +1,6 @@
 screen = getscreen()
 import math
+print("Camera Controls: \nW = Forward\nA = Left\nS = Backward\nD = Right\nSpace = Up\nLControl = Down\n\nRotation:\nUse Arrow Keys")
 speed(0)
 bgcolor("white")
 def concatXPos():
