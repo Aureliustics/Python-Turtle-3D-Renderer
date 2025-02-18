@@ -150,12 +150,14 @@ def down_arrow():
 def w():
     global z_axis
     z_axis += 5
+    pensize(1 + (z_axis / 100))
     render_object()
     
 def s():
     global z_axis
     if z_axis >= 5: # so the object wont invert
         z_axis -= 5
+        pensize(1 + (z_axis / 100))
         render_object()
     
 def d():
