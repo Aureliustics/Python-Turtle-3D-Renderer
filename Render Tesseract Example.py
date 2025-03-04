@@ -150,19 +150,10 @@ def render_object():
         setposition(xPos + x_axis, yPos + y_axis) # later make it so it sets position from 1 vertex to the other just like in the old renderer
         Points.append(concatXPos())
         Points.append(concatYPos())
-        PreviousX = concatXPos()
-        PreviousY = concatYPos()
-        setposition(PreviousX, PreviousY - ((5 * z_axis) / 100)) # centering the circle cuz codehs draws the circle above tracy
-        begin_fill()
-        pendown()
         if debug == False:
-            circle((5 * z_axis) / 100)
+            dot((5 * z_axis) / 100, "black" , 0, 0, 255)
         elif debug == True:
             write(Vertex, move=False, align="top", font=("Arial", 13, "normal"))
-            pass
-        end_fill()
-        penup()
-        setposition(PreviousX, PreviousY)
         #print("[DEBUG]: Rendered Matrix: " + str(Vertex) + " at " + str(PreviousX) + "x " + str(PreviousY) + "y")
         showturtle()
     connection_points()
