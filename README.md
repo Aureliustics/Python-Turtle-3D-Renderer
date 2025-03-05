@@ -19,4 +19,12 @@
   <li>Now that you know this you can change the Points[] value in the setpositions in the function "connection_points()" to connect the vertices</li>
 </ul>
 
-
+<h1>Textures/Colors</h1>
+<p>Currently, I have not implemented support for the object to have textures but I may do so in the future. You could try implementing it by:</p>
+<ul>
+  <li>1. Creating a system that detects (optional) and stores the vertices of each face into a list (So you can set the individual color per face)</li>
+  <li>2. Using the data, you can replace the connection_points function to draw each individual face and fill it with a color</li>
+  <li>3. Since by default, the colors will not draw in order causing issues with drawing priority and overlapping colors. You will need to create a Z buffer which stores the average of each vertice's Z axis per face</li>
+  <li>4. Using a sorting algorithm like bubble sort or whatever you prefer, sort the data inside the Z buffer so it is furthest Z distance -> closest Z distance</li>
+  <li>5. Draw each face in that order with a specific colour and it should work and draw colors in the correct order to prevent overlap</li>
+</ul>
