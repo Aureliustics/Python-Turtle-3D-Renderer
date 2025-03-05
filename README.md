@@ -28,3 +28,4 @@
   <li>4. Using a sorting algorithm like bubble sort or whatever you prefer, sort the data inside the Z buffer so it is furthest Z distance -> closest Z distance</li>
   <li>5. Draw each face in that order with a specific colour and it should work and draw colors in the correct order to prevent overlap</li>
 </ul>
+<p>(*) Optimization tip: you could just not render the faces that aren't shown. For example, since a cube can only show 3 faces at a time, you can only make it renderer the first 3 closest faces instead of all 6 faces of the cube.</p>
