@@ -26,6 +26,6 @@
   <li>2. Using the data, you can replace the connection_points function to draw each individual face and fill it with a color</li>
   <li>3. Since by default, the colors will not draw in order causing issues with drawing priority and overlapping colors. You will need to create a Z buffer which stores the average of each vertice's Z axis per face</li>
   <li>4. Using a sorting algorithm like bubble sort or whatever you prefer, sort the data inside the Z buffer so it is furthest Z distance -> closest Z distance</li>
-  <li>5. Draw each face in that order with a specific colour and it should work and draw colors in the correct order to prevent overlap</li>
+  <li>5. Draw each face in that order with a specific color and it should work and draw colors in the correct order to prevent overlap</li>
 </ul>
 <p>(*) Optimization tip: you could just not render the faces that aren't shown. For example, since a cube can only show 3 faces at a time, you can only make it renderer the first 3 closest faces instead of all 6 faces of the cube.</p>
