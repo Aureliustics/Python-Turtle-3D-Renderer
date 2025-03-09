@@ -4,7 +4,6 @@ import math
 speed(0)
 bgcolor("white")
 
-
 def concatXPos():
     fetchXY = str(pos())
     fetchXY = fetchXY[1:] # remove first character which is "("

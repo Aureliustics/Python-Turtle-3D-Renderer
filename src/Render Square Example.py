@@ -117,71 +117,43 @@ def render_object():
     
 render_object()
 
-def right_arrow():
-    global angleY
-    angleY += 0.1
+def update_angle(axis, value):
+    global angleX, angleY
+    if axis == 'X':
+        angleX += value
+    elif axis == 'Y':
+        angleY += value
     render_object()
-    
-def left_arrow():
-    global angleY
-    angleY -= 0.1
-    render_object()
-    
-def up_arrow():
-    global angleX
-    angleX -= + 0.1
-    render_object()
-    
-def down_arrow():
-    global angleX
-    angleX += 0.1
-    render_object()
-    
-def w():
-    global z_axis
-    z_axis += 5
-    pensize(1 + (z_axis / 100))
-    render_object()
-    
-def s():
-    global z_axis
-    if z_axis >= 5: # so the object wont invert
-        z_axis -= 5
+
+def update_position(axis, value):
+    global x_axis, y_axis, z_axis
+    if axis == 'X':
+        x_axis += value
+    elif axis == 'Y':
+        y_axis += value
+    elif axis == 'Z':
+        z_axis += value
         pensize(1 + (z_axis / 100))
-        render_object()
-    
-def d():
-    global x_axis
-    x_axis += 5
     render_object()
-    
-def a():
-    global x_axis
-    x_axis -= 5
-    render_object()
-    
-def space():
-    global y_axis
-    y_axis += 5
-    render_object()
-    
-def control():
-    global y_axis
-    y_axis -= 5
-    render_object()
-    
+
 def keyInput():
+    key_actions = {
+        "Up": lambda: update_angle('X', -0.1),
+        "Down": lambda: update_angle('X', 0.1),
+        "Right": lambda: update_angle('Y', 0.1),
+        "Left": lambda: update_angle('Y', -0.1),
+        "w": lambda: update_position('Z', 10),
+        "s": lambda: update_position('Z', -5) if z_axis >= 5 else None,
+        "d": lambda: update_position('X', 5),
+        "a": lambda: update_position('X', -5),
+        "Space": lambda: update_position('Y', 5),
+        "Control": lambda: update_position('Y', -5)
+    }
+
     screen.listen()
-    screen.onkey(up_arrow, "Up")
-    screen.onkey(down_arrow, "Down")
-    screen.onkey(right_arrow, "Right")
-    screen.onkey(left_arrow, "Left")
-    screen.onkey(w, "w")
-    screen.onkey(s, "s")
-    screen.onkey(d, "d")
-    screen.onkey(a, "a")
-    screen.onkey(space, "Space")
-    screen.onkey(control, "Control")
+    for key, action in key_actions.items():
+        screen.onkey(action, key)
+
 keyInput()
 hideturtle()
 
