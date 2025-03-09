@@ -6,7 +6,7 @@
   <li>Must be ran in a <a href="https://codehs.com/" target="_blank">CodeHS</a> sandbox</li>
   <li>Once logged into Codehs, click "Sandbox" in the navigation bar</li>
   <li>Click "Create Program" then select "Python (turtle)" and create program</li>
-  <li>Copy and paste the code from either the <a href="https://github.com/Aureliustics/Python-Turtle-3D-Renderer/blob/main/Render%20Square%20Example.py" target="_blank">square example</a>, <a href="https://github.com/Aureliustics/Python-Turtle-3D-Renderer/blob/main/Render%20Triangle%20Example.py" target="_blank">triangle example</a> or <a href="https://github.com/Aureliustics/Python-Turtle-3D-Renderer/blob/main/Render%20Tesseract%20Example.py" target="_blank">tesseract example</a> into your sandbox then run</li>
+  <li>Copy and paste the code from either the <a href="https://github.com/Aureliustics/Python-Turtle-3D-Renderer/blob/main/src/Render%20Square%20Example.py" target="_blank">square example</a>, <a href="https://github.com/Aureliustics/Python-Turtle-3D-Renderer/blob/main/src/Render%20Triangle%20Example.py" target="_blank">triangle example</a> or <a href="https://github.com/Aureliustics/Python-Turtle-3D-Renderer/blob/main/src/Render%20Tesseract%20Example.py" target="_blank">tesseract example</a> into your sandbox then run</li>
   <li>Interact with the object using WASD and arrow keys. WASD moves the camera position and arrow keys changes the rotation of the object</li>
 </ul>
 
@@ -29,3 +29,5 @@
   <li>5. Draw each face in that order with a specific color and it should work and draw colors in the correct order to prevent overlap</li>
 </ul>
 <p>(*) Optimization note: you could just not render the faces that aren't shown. For example, since a cube can only show 3 faces at a time, you can only make it renderer the first 3 closest faces instead of all 6 faces of the cube.</p>
+<p>(*) If you need an example to go off of, I made an <a href="https://github.com/Aureliustics/Python-Turtle-3D-Renderer/blob/main/src/Geometric%20Face%20Generation.py" target="_blank">updated system</a> that does not use connection_points() and instead generates all possible unique faces. (Including faces that cut through the object which makes the "X" shape on the base)</p>
+<p>    -You should tweak it so the algorithm ignores faces that go through the object. This will allow you to fill in the faces with color without breaking the shape.</p>
