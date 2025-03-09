@@ -1,8 +1,6 @@
-debug = False
-print("Camera Controls: \nW = Forward\nA = Left\nS = Backward\nD = Right\nSpace = Up\nLControl = Down\n\nRotation:\nUse Arrow Keys")
-# Matrix: https://technology.cpm.org/general/3dgraph/?graph3ddata=____bIxmuxmuwWaJxmuwWawWaKwWawWawWaLwWaxmuwWaMwWawWaxmuHwWaxmuxmuIxmuwWaxmuJxmuxmuxmuKxBExBExBELxBEwG0xBEMwG0wG0xBEHwG0xBExBEIxBExBEwG0JwG0xBEwG0KxBEwG0wG0LwG0wG0wG0
 screen = getscreen()
 import math
+print("Camera Controls: \nW = Forward\nA = Left\nS = Backward\nD = Right\nSpace = Up\nLControl = Down\n\nRotation:\nUse Arrow Keys")
 speed(0)
 bgcolor("white")
 def concatXPos():
@@ -21,78 +19,42 @@ def concatYPos():
 concatYPos()
 
 Points = []
-def connection_points():
+def connection_points(): # obviously theres a better and less hardcoded way than drawing from one vertex to the other but it works
     penup()
     setposition(Points[0], Points[1])
     pendown()
     setposition(Points[2], Points[3])
-    setposition(Points[12], Points[13])
-    setposition(Points[14], Points[15])
-    setposition(Points[0], Points[1])
+    setposition(Points[4], Points[5])
     setposition(Points[6], Points[7])
-    setposition(Points[4], Points[5])
-    setposition(Points[2], Points[3])
-    setposition(Points[4], Points[5])
+    setposition(Points[0], Points[1])
     setposition(Points[8], Points[9])
     setposition(Points[10], Points[11])
-    setposition(Points[14], Points[15])
-    setposition(Points[12], Points[13])
-    setposition(Points[8], Points[9])
-    setposition(Points[4], Points[5])
-    setposition(Points[6], Points[7])
-    setposition(Points[10], Points[11])
-    setposition(Points[22], Points[23])
-    setposition(Points[26], Points[27])
-    setposition(Points[6], Points[7])
-    setposition(Points[26], Points[27])
-    setposition(Points[24], Points[25])
-    setposition(Points[0], Points[1])
-    setposition(Points[24], Points[25])
-    setposition(Points[28], Points[29])
-    setposition(Points[30], Points[31])
-    setposition(Points[4], Points[5])
-    setposition(Points[30], Points[31])
-    setposition(Points[20], Points[21])
-    setposition(Points[8], Points[9])
-    setposition(Points[20], Points[21])
-    setposition(Points[22], Points[23])
-    setposition(Points[26], Points[27])
-    setposition(Points[30], Points[31])
-    setposition(Points[28], Points[29])
-    setposition(Points[2], Points[3])
-    setposition(Points[28], Points[29])
-    setposition(Points[18], Points[19])
-    setposition(Points[12], Points[13])
-    setposition(Points[18], Points[19])
-    setposition(Points[16], Points[17])
-    setposition(Points[14], Points[15])
-    setposition(Points[16], Points[17])
-    setposition(Points[22], Points[23])
-    setposition(Points[16], Points[17])
-    setposition(Points[24], Points[25])
     penup()
-    setposition(Points[18], Points[19])
+    setposition(Points[2], Points[3])
     pendown()
-    setposition(Points[20], Points[21])
-    del Points[:] # emptys the list for reuse. took a while to figure out why the line was moving during rotation lol
+    setposition(Points[10], Points[11])
+    setposition(Points[12], Points[13])
+    setposition(Points[14], Points[15])
+    setposition(Points[6], Points[7])
+    penup()
+    setposition(Points[12], Points[13])
+    pendown()
+    setposition(Points[4], Points[5])
+    penup()
+    setposition(Points[8], Points[9])
+    pendown()
+    setposition(Points[14], Points[15])
+    del Points[:] # emptys the list for reuse.
     
-Vertices = [n for n in range(16)] # technically could make any shape using this: https://technology.cpm.org/general/3dgraph/
-Vertices[0] = [[1], [1], [-1]]
-Vertices[1] = [[1], [-1], [-1]]
-Vertices[2] = [[-1], [-1], [-1]]
-Vertices[3] = [[-1], [1], [-1]]
-Vertices[4] = [[-1], [-1], [1]]
-Vertices[5] = [[-1], [1], [1]]
-Vertices[6] = [[1], [-1], [1]]
-Vertices[7] = [[1], [1], [1]] # next is outter cube
-Vertices[8] = [[2], [2], [2]]
-Vertices[9] = [[2], [-2], [2]]
-Vertices[10] = [[-2], [-2], [2]]
-Vertices[11] = [[-2], [2], [2]]
-Vertices[12] = [[2], [2], [-2]]
-Vertices[13] = [[-2], [2], [-2]]
-Vertices[14] = [[2], [-2], [-2]]
-Vertices[15] = [[-2], [-2], [-2]]
+Vertices = [n for n in range(8)] # technically could make any shape using this: https://technology.cpm.org/general/3dgraph/
+Vertices[0] = [[-1], [-1], [1]]
+Vertices[1] = [[1], [-1], [1]]
+Vertices[2] = [[1], [1], [1]]
+Vertices[3] = [[-1], [1], [1]]
+Vertices[4] = [[-1], [-1], [-1]]
+Vertices[5] = [[1], [-1], [-1]]
+Vertices[6] = [[1], [1], [-1]]
+Vertices[7] = [[-1], [1], [-1]]
 
 # visual for how matrix multiplication works: https://i.sstatic.net/ZoUDJ.gif
 def matrix_multiply(A, B): # algorithm for multiplying the matrix:
@@ -120,9 +82,7 @@ z_axis = 100 # basically forward and backwards. start at 100 distance away (came
 x_axis = 0 # basically left and right. (camera movement)
 y_axis = 0 # basically up and down (camera movement)
 def render_object():
-    global angleX
-    global angleY
-    global angleZ
+    global angleX, angleY, angleZ
     # formula from: https://en.wikipedia.org/wiki/Rotation_matrix
     rotationX = [[1, 0, 0],
                 [0, math.cos(angleX), -math.sin(angleX)],
@@ -147,15 +107,11 @@ def render_object():
         xPos = projection[0][0] * z_axis
         yPos = projection[1][0] * z_axis
         penup()
-        setposition(xPos + x_axis, yPos + y_axis) # later make it so it sets position from 1 vertex to the other just like in the old renderer
+        setposition(xPos + x_axis, yPos + y_axis)
         Points.append(concatXPos())
         Points.append(concatYPos())
-        if debug == False:
-            dot((5 * z_axis) / 100, "black" , 0, 0, 255)
-        elif debug == True:
-            write(Vertex, move=False, align="top", font=("Arial", 13, "normal"))
+        dot((5 * z_axis) / 100, "black" , 0, 0, 255)
         #print("[DEBUG]: Rendered Matrix: " + str(Vertex) + " at " + str(PreviousX) + "x " + str(PreviousY) + "y")
-        showturtle()
     connection_points()
     screen.update()
     
