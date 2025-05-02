@@ -8,6 +8,7 @@
   <li>Click "Create Program" then select "Python (turtle)" and create program</li>
   <li>Copy and paste the code from either the <a href="https://github.com/Aureliustics/Python-Turtle-3D-Renderer/blob/main/src/Render%20Square%20Example.py" target="_blank">square example</a>, <a href="https://github.com/Aureliustics/Python-Turtle-3D-Renderer/blob/main/src/Render%20Triangle%20Example.py" target="_blank">triangle example</a> or <a href="https://github.com/Aureliustics/Python-Turtle-3D-Renderer/blob/main/src/Render%20Tesseract%20Example.py" target="_blank">tesseract example</a> into your sandbox then run</li>
   <li>Interact with the object using WASD and arrow keys. WASD moves the camera position and arrow keys changes the rotation of the object</li>
+  <li>If you prefer a camera that is in a first person style (letting you move past the object and through it) run the <a href="https://github.com/Aureliustics/Python-Turtle-3D-Renderer/blob/main/src/FPS%20Type%20Camera.py" target="_blank">fps camera version</a></li>
 </ul>
 
 <h1>Modify Object</h1>
